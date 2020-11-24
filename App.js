@@ -31,7 +31,7 @@ export default function App() {
   async function getTempNow(){
     try{
 
-      const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=66bd316541ce524af597c2a30b37679f&lang=pt_br`);
+      const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid={yourapi}&lang=pt_br`);
 
       
 
@@ -67,7 +67,7 @@ export default function App() {
       setModalVisible(!modalVisible);
 
       const responsetwo = await axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=hourly,current,
-    minutely,alerts&appid=66bd316541ce524af597c2a30b37679f&lang=pt_br&units=metric`)
+    minutely,alerts&appid={yourapi}&lang=pt_br&units=metric`)
 
     const today = await responsetwo.data.daily.map((item, index)=>{
       if(index === 0){
